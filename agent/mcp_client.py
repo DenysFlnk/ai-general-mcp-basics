@@ -91,7 +91,7 @@ class MCPClient:
             raise RuntimeError("MCP client not connected.")
 
         resource: ReadResourceResult = await self.session.read_resource(uri)
-        content = resource[0]
+        content = resource.contents[0]
 
         if isinstance(content, TextResourceContents):
             return content.text

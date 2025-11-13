@@ -36,7 +36,7 @@ async def add_user(user_create_model: UserCreate) -> str:
 @mcp.tool()
 async def update_user(id: int, update_user_model: UserUpdate) -> str:
     """Updates existing user by id"""
-    return await user_client.update_user(update_user_model)
+    return await user_client.update_user(id, update_user_model)
 
 
 # ==================== MCP RESOURCES ====================
